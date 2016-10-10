@@ -1,0 +1,14 @@
+- name: register active users
+  local_action: shell echo "{{ item.key }}"
+  become: no
+  with_dict: users
+  when: item.value.state == "present"
+  register: active_users
+
+- name: Copy Bash Aliases for colors
+  lineinfile: dest=/home/{{ item[0].stdout}}/.bash_aliases owner={{ item[0].stdout}} group={{ item[0].stdout}}  mode=644 line="{{ item[1] }}" create=yes
+  become: yes
+  when: item[0].changed
+  with_nested: 
+    - "{{ active_users.results }}"
+    - "{{ bash_entries }}"

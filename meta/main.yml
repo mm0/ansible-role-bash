@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Matt Margolin
+  description: "
+An Ansible role that configures ~/.bash_aliases for users
+
+Allows you to specify a different list of users with specific bash_aliases for each host group or within a playbook"
+  company: 
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+  - name: All
+    versions:
+    - all
+  galaxy_tags:
+dependencies:
+
