@@ -1,6 +1,6 @@
 - hosts: all
   vars:
-    users:
+  - users:
       travis:
         state: present
         groups:  sudo,travis
