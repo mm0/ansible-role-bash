@@ -1,6 +1,8 @@
-# README.md
+Ansible Role: Bash v1.0
+=====================
 
-# Ansible Role: Bash v1.0
+[![Build Status](https://travis-ci.org/mm0/ansible-role-bash.svg?branch=master)](https://travis-ci.org/mm0/ansible-role-bash)
+
 
 An Ansible role that configures ~/.bash_aliases for users
 
@@ -8,47 +10,55 @@ Allows you to specify a different list of users with specific bash_aliases for e
 
 See Also: ansible-role-sudo, ansible-role-bash, ansible-role-user
 
-![travis-ci](https://travis-ci.org/mm0/ansible-role-bash.svg?branch=master)
 
-## Requirements
+Requirements
+---------------
 
-Sudo access
+- Sudo access
 
-## Role Variables
+Role Variables
+---------------
 
 Available variables are listed below, there are no defaults:
 
-		users:
-			ubuntu:
-				state: present
-				groups:  sudo,ubuntu
-				sudo: "ALL=(ALL) NOPASSWD: ALL"
+```yml
+users:
+    ubuntu:
+        state: present
+        groups:  sudo,ubuntu
+        sudo: "ALL=(ALL) NOPASSWD: ALL"
+```
 
 Sets PS1 and various aliases defined in vars/main.yml
 
-## Dependencies
+Dependencies
+---------------
 
 None 
 
-## Example Playbook
+Example Playbook
+---------------
 
-    - hosts: webservers
-      vars:
-				users:
-					ubuntu:
-						state: present
-						groups:  sudo,ubuntu
-						sudo: "ALL=(ALL) NOPASSWD: ALL"
-      roles:
-      - ansible-role-bash
+```yml
+- hosts: webservers
+  vars:
+    users:
+        ubuntu:
+            state: present
+            groups:  sudo,ubuntu
+            sudo: "ALL=(ALL) NOPASSWD: ALL"
+  roles:
+  - ansible-role-bash
+```
 
-## License
+License
+---------------
 
-MIT
+BSD-2
 
 Author Information
 ------------------
 
 [Matt Margolin](mailto:matt.margolin@gmail.com)
 
-mm0 on github
+[mm0](https://github.com/mm0) on github

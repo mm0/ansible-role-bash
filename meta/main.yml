@@ -6,12 +6,17 @@ An Ansible role that configures ~/.bash_aliases for users
 
 Allows you to specify a different list of users with specific bash_aliases for each host group or within a playbook"
   company: 
-  license: MIT
+  license: BSD2
   min_ansible_version: 2.0
   platforms:
-  - name: All
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
     versions:
     - all
   galaxy_tags:
+    - system
+    - bash
 dependencies:
 
