@@ -1,7 +1,7 @@
 - name: register active users
   local_action: shell echo "{{ item.key }}"
   become: no
-  with_dict: users
+  with_dict: "{{ users }}"
   when: item.value.state == "present"
   register: active_users
 
